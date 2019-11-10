@@ -2,10 +2,12 @@ import 'dart:typed_data';
 import 'package:flutter/services.dart';
 
 enum FileType {
-  image,
-  gif,
-  pdf,
-  video,
+  jpg,  //  0
+  jpeg, //  1
+  png,  //  2
+  gif,  //  3
+  video,//  4
+  pdf,  //  5
 }
 
 class TfAlbumSaver {
@@ -13,7 +15,7 @@ class TfAlbumSaver {
       const MethodChannel('tf_album_saver_channel');
 
   static Future<String> saveToAlbum(FileType type, String filePath) async {
-    if (type == FileType.pdf) return '';
+    if (type == FileType.pdf) return 'Does not support pdf';
     return await _channel.invokeMethod(
       'saveToAlbum',
       {

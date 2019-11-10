@@ -30,9 +30,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var type = FileType.image;
+  var type = FileType.jpg;
   var map = {
-    FileType.image: 'images/image.png',
+    FileType.jpg: 'images/jpg.jpg',
+    FileType.jpeg: 'images/jpeg.jpeg',
+    FileType.png: 'images/png.png',
     FileType.gif: 'images/gif.gif',
     FileType.pdf: 'images/pdf.pdf',
     FileType.video: 'images/video.MOV',
@@ -66,12 +68,16 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   for (var t in map.keys)
-                    FlatButton(
-                      color: type == t ? Colors.red : Colors.transparent,
-                      child:
-                          Text('${t.toString().replaceAll('FileType.', '')}'),
-                      onPressed: () => setState(() => type = t),
-                    ),
+                    GestureDetector(
+                      child: Container(
+                        alignment: Alignment.center,
+                        width: width / map.keys.length * 0.8,
+                        color: type == t ? Colors.red : Colors.transparent,
+                        child:
+                            Text('${t.toString().replaceAll('FileType.', '')}'),
+                      ),
+                      onTap: () => setState(() => type = t),
+                    )
                 ],
               ),
             ),

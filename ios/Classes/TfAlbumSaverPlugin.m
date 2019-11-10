@@ -17,7 +17,7 @@
     if ([@"saveToAlbum" isEqualToString:call.method]) {
         NSNumber *type = call.arguments[@"type"];
         NSString *filePath = call.arguments[@"filePath"];
-        if ([type intValue] == 3) {
+        if ([type intValue] == 4) {
             SEL selector = @selector(onCompleteCapture:didFinishSavingWithError:contextInfo:);
             UISaveVideoAtPathToSavedPhotosAlbum(filePath, self, selector, NULL);
             //  result in selector

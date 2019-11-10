@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0887601d-a8fc-451e-9f3f-eb20c289cf93" name="Default Changelist" comment="" />
+    <list default="true" id="0887601d-a8fc-451e-9f3f-eb20c289cf93" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/images/jpeg.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/images/jpg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/images/pdf.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/images/png.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/tf_album_saver/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/tf_album_saver/example/images/jpeg.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/tf_album_saver/example/images/jpg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/tf_album_saver/example/images/pdf.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/tf_album_saver/example/images/png.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/kotlin/com/example/tf_album_saver/TfAlbumSaverPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/example/tf_album_saver/TfAlbumSaverPlugin.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/tf_album_saver/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/tf_album_saver/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/tf_album_saver/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/tf_album_saver/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/tf_album_saver/android/src/main/kotlin/com/example/tf_album_saver/TfAlbumSaverPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/tf_album_saver/android/src/main/kotlin/com/example/tf_album_saver/TfAlbumSaverPlugin.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/tf_album_saver/example/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/tf_album_saver/example/ios/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/tf_album_saver/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/tf_album_saver/example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/tf_album_saver/ios/Classes/TfAlbumSaverPlugin.m" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/tf_album_saver/ios/Classes/TfAlbumSaverPlugin.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/tf_album_saver/lib/tf_album_saver.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/tf_album_saver/lib/tf_album_saver.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/TfAlbumSaverPlugin.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/TfAlbumSaverPlugin.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/tf_album_saver.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/tf_album_saver.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,11 +40,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/tf_album_saver.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="12" column="49" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="49" />
+            <state relative-caret-position="390">
+              <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -26,8 +52,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="36" column="21" selection-start-line="36" selection-end-line="37" />
+            <state relative-caret-position="269">
+              <caret line="38" column="35" lean-forward="true" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
               </folding>
@@ -36,18 +62,26 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/lib/permission.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
+        <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="30">
+                <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-end-line="2" selection-end-column="39" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example/images/jpeg.jpeg">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/lib/VideoPlayerHelper.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
+            <state relative-caret-position="240">
               <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
@@ -59,7 +93,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/bin/flutter/.pub-cache/hosted/pub.flutter-io.cn/flutter_simple_video_player-0.0.9/lib/flutter_simple_video_player.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
+            <state relative-caret-position="105">
               <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
               <folding>
                 <element signature="e#28#67#0" expanded="true" />
@@ -77,9 +111,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pubspec.yaml">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="23" lean-forward="true" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -114,7 +152,11 @@
       <find>gifBytes</find>
       <find>videoController</find>
       <find>http://www.sample-videos.com/video123/mp4/720/big_buck_bunny_720p_20mb.mp4</find>
+      <find>pdfPath</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -124,8 +166,10 @@
         <option value="$PROJECT_DIR$/example/android/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/example/lib/VideoPlayerHelper.dart" />
         <option value="$PROJECT_DIR$/example/pubspec.yaml" />
-        <option value="$PROJECT_DIR$/example/lib/main.dart" />
         <option value="$PROJECT_DIR$/lib/tf_album_saver.dart" />
+        <option value="$PROJECT_DIR$/example/lib/main.dart" />
+        <option value="$PROJECT_DIR$/CHANGELOG.md" />
+        <option value="$PROJECT_DIR$/pubspec.yaml" />
       </list>
     </option>
   </component>
@@ -135,6 +179,7 @@
     <option name="width" value="1714" />
     <option name="height" value="966" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -152,23 +197,6 @@
             <path>
               <item name="tf_album_saver" type="b2602c69:ProjectViewProjectNode" />
               <item name="tf_album_saver" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tf_album_saver" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tf_album_saver" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tf_album_saver" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tf_album_saver" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tf_album_saver" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tf_album_saver" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -178,16 +206,17 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/example/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/example/images" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/example/lib" />
       <recent name="$PROJECT_DIR$/example/images" />
+      <recent name="$PROJECT_DIR$/example/lib" />
       <recent name="$PROJECT_DIR$/example" />
       <recent name="$PROJECT_DIR$/images" />
       <recent name="$PROJECT_DIR$" />
@@ -237,7 +266,7 @@
     <frame x="74" y="41" width="1714" height="966" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25598085" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2589713" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -246,7 +275,7 @@
       <window_info id="UI Designer" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49641147" weight="0.6098398" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49641147" visible="true" weight="0.43249428" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3993135" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -332,9 +361,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/example/lib/permission.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/example/lib/VideoPlayerHelper.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
+        <state relative-caret-position="240">
           <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
@@ -344,7 +380,7 @@
     </entry>
     <entry file="file://$USER_HOME$/bin/flutter/.pub-cache/hosted/pub.flutter-io.cn/flutter_simple_video_player-0.0.9/lib/flutter_simple_video_player.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
+        <state relative-caret-position="105">
           <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
           <folding>
             <element signature="e#28#67#0" expanded="true" />
@@ -358,9 +394,6 @@
           <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$USER_HOME$/bin/flutter/packages/flutter/lib/src/material/scaffold.dart">
       <provider selected="true" editor-type-id="text-editor">
@@ -376,27 +409,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/lib/permission.dart">
+    <entry file="file://$PROJECT_DIR$/example/images/jpeg.jpeg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/tf_album_saver.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="390">
+          <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="36" column="21" selection-start-line="36" selection-end-line="37" />
+        <state relative-caret-position="269">
+          <caret line="38" column="35" lean-forward="true" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/tf_album_saver.dart">
+    <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="30">
+            <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-end-line="2" selection-end-column="39" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="12" column="49" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="49" />
+        <state relative-caret-position="105">
+          <caret line="7" column="23" lean-forward="true" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
         </state>
       </provider>
     </entry>

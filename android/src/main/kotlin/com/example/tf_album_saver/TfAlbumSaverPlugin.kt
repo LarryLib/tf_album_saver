@@ -34,31 +34,17 @@ class TfAlbumSaverPlugin : MethodCallHandler {
         when (call.method) {
             "saveToAlbum" -> {
                 val type = call.argument<Int>("type")!!
-                val filePath = call.argument<String>("filePath")
+                val filePath = call.argument<String>("filePath")!!
                 val file = File(filePath)
+                val separate1 = filePath.split("/".toRegex())
+                var fileName = System.currentTimeMillis().toString() + separate1.last()
 
                 when (type) {
-                    0 -> {
-                        val fileName = System.currentTimeMillis().toString() + ".jpg"
+                    0, 1, 2 -> {
                         notiAlbum(file, fileName)
                         result.success(null)
                     }
-                    1 -> {
-                        val fileName = System.currentTimeMillis().toString() + ".gif"
-                        val newFile = getNewFileAndName(fileName)
-                        copyFile(file.path, newFile.path)
-                        notiAlbum(newFile, fileName)
-                        result.success(null)
-                    }
-                    2 -> {
-                        val fileName = System.currentTimeMillis().toString() + ".pdf"
-                        val newFile = getNewFileAndName(fileName)
-                        copyFile(file.path, newFile.path)
-                        notiAlbum(newFile, fileName)
-                        result.success(null)
-                    }
-                    3 -> {
-                        val fileName = System.currentTimeMillis().toString() + ".MOV"
+                    3, 4 -> {
                         val newFile = getNewFileAndName(fileName)
                         copyFile(file.path, newFile.path)
                         notiAlbum(newFile, fileName)
