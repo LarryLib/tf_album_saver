@@ -32,10 +32,17 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   var type = FileType.image;
   var map = {
-    FileType.image: 'images/jpg.jpg', // 'images/jpeg.jpeg'、'images/png.png'
+    FileType.image: 'images/jpg.jpg',
     FileType.gif: 'images/gif.gif',
     FileType.video: 'images/video.MOV',
     FileType.pdf: 'images/pdf.pdf',
+  };
+
+  var imgType = ImageType.jpg;
+  var imgMap = {
+    ImageType.jpg: 'images/jpg.jpg',
+    ImageType.jpeg: 'images/jpeg.jpeg',
+    ImageType.png: 'images/png.png',
   };
 
   //
@@ -60,16 +67,16 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             Container(
-              height: 100,
+              height: 80,
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   for (var t in map.keys)
                     GestureDetector(
                       child: Container(
                         alignment: Alignment.center,
-                        width: width / map.keys.length * 0.8,
+                        width: width / map.keys.length * 0.6,
                         height: 50,
                         color: type == t ? Colors.red : Colors.transparent,
                         child:
@@ -80,26 +87,48 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
+            if (type == FileType.image)
+              Container(
+                height: 40,
+                width: width,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    for (var t in imgMap.keys)
+                      GestureDetector(
+                        child: Container(
+                          alignment: Alignment.center,
+                          width: width / map.keys.length / 3.0,
+                          color: imgType == t ? Colors.red : Colors.transparent,
+                          child: Text(
+                            '${t.toString().replaceAll('ImageType.', '')}',
+                          ),
+                        ),
+                        onTap: () => setState(() => imgType = t),
+                      )
+                  ],
+                ),
+              ),
             Container(
               width: width * 0.8,
               height: width * 0.8,
               child: type == FileType.video
-                  ? AssetPlayerLifeCycle('images/video.MOV',
-                      (context, controller) {
+                  ? AssetPlayerLifeCycle(map[type], (context, controller) {
                       videoController = controller;
                       return AspectRatioVideo(controller);
                     })
                   : type == FileType.pdf && pdfPath != null
                       ? PdfViewer(filePath: pdfPath)
                       : Image.asset(
-                          map[type],
+                          type == FileType.gif ? map[type] : imgMap[imgType],
                           width: width * 0.8,
                           height: width * 0.8,
                         ),
             ),
             FlatButton(
               color: Colors.blue,
-              child: Text('Save To Album'),
+              child: Text('Save File To Album by FilePath'),
               onPressed: () async {
                 var permissionGroup = Platform.isAndroid
                     ? PermissionGroup.storage
@@ -111,15 +140,42 @@ class _HomePageState extends State<HomePage> {
                 }
 
                 print('type = ${type.index}');
-                var filePath = await getFile(map[type]);
+                var filePath = type == FileType.image
+                    ? await getFile(imgMap[imgType])
+                    : await getFile(map[type]);
                 var errorMsg =
                     await TfAlbumSaver.saveToAlbum(type, filePath.path);
-                var showText =
-                    'Save To Album ${errorMsg == null ? 'success' : errorMsg}';
+                var ret = errorMsg == null ? 'success' : errorMsg;
+                var showText = 'Save File To Album by FilePath ${ret}';
                 print(showText);
                 Toast.show(context, title: showText);
               },
             ),
+            if (type == FileType.image)
+              FlatButton(
+                color: Colors.blue,
+                child: Text('Save Image To Album by Bytes'),
+                onPressed: () async {
+                  var permissionGroup = Platform.isAndroid
+                      ? PermissionGroup.storage
+                      : PermissionGroup.photos;
+                  var b = await checkAndRequest(permissionGroup);
+                  if (!b) {
+                    Toast.show(context, title: '请开启相册访问权限，以存储照片或Gif到相册');
+                    return;
+                  }
+
+                  final byteData = await rootBundle.load(imgMap[imgType]);
+                  final bytes = byteData.buffer.asUint8List();
+
+                  var errorMsg =
+                      await TfAlbumSaver.saveImageByBytes(bytes, type: imgType);
+                  var ret = errorMsg == null ? 'success' : errorMsg;
+                  var showText = 'Save Image To Album by Bytes ${ret}';
+                  print(showText);
+                  Toast.show(context, title: showText);
+                },
+              ),
           ],
         ),
         floatingActionButton: type == FileType.video && videoController != null
@@ -143,20 +199,20 @@ class _HomePageState extends State<HomePage> {
   }
 
   saveToFile() async {
-    map.values.forEach((name) async {
-      var file = await getFile(name);
-      await file.createSync(recursive: true);
-      final byteData = await rootBundle.load(name);
-      final bytes = byteData.buffer.asUint8List();
-      await file.writeAsBytesSync(bytes);
+    map.values.forEach(saveByName);
+    imgMap.values.forEach(saveByName);
+  }
 
-      print(file.path);
+  void saveByName(name) async {
+    var file = await getFile(name);
+    await file.createSync(recursive: true);
+    final byteData = await rootBundle.load(name);
+    final bytes = byteData.buffer.asUint8List();
+    await file.writeAsBytesSync(bytes);
 
-      if (name.contains('pdf'))
-        setState(() {
-          pdfPath = file.path;
-        });
-    });
+    print('filePath = ${file.path}');
+
+    if (name.contains('pdf')) setState(() => pdfPath = file.path);
   }
 
   Future<File> getFile(String name) async {
