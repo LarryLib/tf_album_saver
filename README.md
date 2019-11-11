@@ -1,14 +1,27 @@
 # tf_album_saver
+A plugin that can save image/gif/video to an album.
 
-A new Flutter project.
+## Features
+> Save image/gif/video to album
 
-## Getting Started
+## Usage 
+#### To use this plugin, add tf_ablum_saver as a dependency in your pubspec.yaml file. For example:
+  ```
+    dependencies:
+        tf_ablum_saver: '^0.0.2'
+  ```
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+## Android and iOS specific permissions #
+For this plugin to work you will have to add permission configuration to your AndroidManifest.xml (Android) and Info.plist (iOS) files. This will tell the platform which hardware or software features your app needs. Complete lists of these permission options can be found in our example app here:
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+### AndroidManifest.xml
+ ```
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+ ```
+### Info.plist
+ ```
+    Privacy - Photo Library Additions Usage Description
+    Privacy - Photo Library Usage Description
+ ```
