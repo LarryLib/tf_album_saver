@@ -33,13 +33,13 @@ class TfAlbumSaverPlugin : MethodCallHandler {
     override fun onMethodCall(call: MethodCall, result: Result) {
         when (call.method) {
             "saveToAlbum" -> {
-                val type = call.argument<Int>("type")!!
+                val fileType = call.argument<Int>("type")!!
                 val filePath = call.argument<String>("filePath")!!
                 val file = File(filePath)
                 val separate1 = filePath.split("/".toRegex())
                 var fileName = System.currentTimeMillis().toString() + separate1.last()
 
-                when (type) {
+                when (fileType) {
                     0 -> {
                         MediaStore.Images.Media.insertImage(tfRegistrar.context().getContentResolver(), file.getAbsolutePath(), fileName, null);
                         notiAlbum(file)
@@ -57,29 +57,30 @@ class TfAlbumSaverPlugin : MethodCallHandler {
             }
             "saveImageByBytes" -> {
                 val bytes = call.argument<ByteArray>("imageBytes")
+                val suffix = call.argument<String>("suffix")!!
                 val bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes!!.size)
-                saveImageToGallery(bitmap)
+                saveImageToGallery(bitmap, suffix)
                 result.success(null)
             }
             else -> result.notImplemented()
         }
     }
 
-    //保存图片bytes到指定路径
-    fun saveImageToGallery(bmp: Bitmap) {
-        val fileName = System.currentTimeMillis().toString() + ".jpg"
+    //  保存图片(bytes),并通知更新
+    fun saveImageToGallery(bmp: Bitmap, suffix: String) {
+        val fileName = System.currentTimeMillis().toString() + "." + suffix
+        var type = Bitmap.CompressFormat.JPEG
+        if (suffix == "PNG") type = Bitmap.CompressFormat.PNG   //  TODO Fix WEBP
         val file = getNewFileAndName(fileName)
-
         try {
             val fos = FileOutputStream(file)
             //通过io流的方式来压缩保存图片
-            bmp.compress(Bitmap.CompressFormat.JPEG, 60, fos)
+            bmp.compress(type, 60, fos)
             fos.flush()
             fos.close()
 
             //把文件插入到系统图库
             MediaStore.Images.Media.insertImage(tfRegistrar.context().getContentResolver(), file.getAbsolutePath(), fileName, null);
-
             notiAlbum(file)
         } catch (e: IOException) {
             e.printStackTrace()
@@ -89,21 +90,9 @@ class TfAlbumSaverPlugin : MethodCallHandler {
     private fun getNewFileAndName(fileName: String): File {
         val storePath = Environment.getExternalStorageDirectory().absolutePath + File.separator
         val appDir = File(storePath)
-        if (!appDir.exists()) {
-            appDir.mkdir()
-        }
+        if (!appDir.exists()) appDir.mkdir()
         val file = File(appDir, fileName)
         return file
-    }
-
-    //  发送广播通知更新
-    fun notiAlbum(file: File) {
-        try {
-            val uri = Uri.fromFile(file)
-            tfRegistrar.activeContext().sendBroadcast(Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, uri))
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
     }
 
     fun copyFile(oldPath: String, newPath: String) {
@@ -130,6 +119,14 @@ class TfAlbumSaverPlugin : MethodCallHandler {
 
     }
 
-
+    //  发送广播通知更新
+    fun notiAlbum(file: File) {
+        try {
+            val uri = Uri.fromFile(file)
+            tfRegistrar.activeContext().sendBroadcast(Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, uri))
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+    }
 }
 

@@ -8,6 +8,12 @@ enum FileType {
   pdf,    //  3
 }
 
+enum ImageType {
+  jpg,  //  0
+  jpeg, //  1
+  png,  //  2
+}
+
 class TfAlbumSaver {
   static const MethodChannel _channel =
       const MethodChannel('tf_album_saver_channel');
@@ -23,10 +29,14 @@ class TfAlbumSaver {
     );
   }
 
-  static Future<String> saveImageByBytes(Uint8List imageBytes) async {
+  static Future<String> saveImageByBytes(
+    Uint8List imageBytes, {
+    ImageType type = ImageType.jpg,
+  }) async {
     return await _channel.invokeMethod(
       'saveImageByBytes',
       {
+        'suffix': type.toString().split('.').last,
         'imageBytes': imageBytes,
       },
     );
