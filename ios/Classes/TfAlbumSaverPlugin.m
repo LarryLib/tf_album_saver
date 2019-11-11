@@ -18,7 +18,8 @@
         NSNumber *type = call.arguments[@"type"];
         NSString *filePath = call.arguments[@"filePath"];
         switch ([type intValue]) {
-            case 0: {
+            case 0:
+            case 1:{
                 NSData *data = [NSData dataWithContentsOfFile:filePath];
                 ALAssetsLibrary *library = [ALAssetsLibrary new];
                 [library writeImageDataToSavedPhotosAlbum:data metadata:nil completionBlock:^(NSURL *assetURL, NSError *error) {
@@ -26,7 +27,6 @@
                 }];
                 break;
             }
-            case 1:
             case 2: {
                 SEL selector = @selector(onCompleteCapture:didFinishSavingWithError:contextInfo:);
                 UISaveVideoAtPathToSavedPhotosAlbum(filePath, self, selector, NULL);
