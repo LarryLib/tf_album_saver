@@ -1,3 +1,6 @@
+## 0.2.1
+- ext.kotlin_version = '1.3.0'
+
 ## 0.2.0
 - Fix-iOS save gif
 - Add ImageType(jpg/jpeg/png) of Android

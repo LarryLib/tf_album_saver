@@ -8,7 +8,7 @@ A plugin that can save image/gif/video to an album.
 #### To use this plugin, add tf_ablum_saver as a dependency in your pubspec.yaml file. For example:
   ```
     dependencies:
-        tf_album_saver: ^0.2.0
+        tf_album_saver: ^0.2.1
   ```
 
 ## Android and iOS specific permissions #
