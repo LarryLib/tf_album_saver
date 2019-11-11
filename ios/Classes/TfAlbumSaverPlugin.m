@@ -17,20 +17,25 @@
     if ([@"saveToAlbum" isEqualToString:call.method]) {
         NSNumber *type = call.arguments[@"type"];
         NSString *filePath = call.arguments[@"filePath"];
-        if ([type intValue] == 4) {
-            SEL selector = @selector(onCompleteCapture:didFinishSavingWithError:contextInfo:);
-            UISaveVideoAtPathToSavedPhotosAlbum(filePath, self, selector, NULL);
-            //  result in selector
-        } else {
-            NSData *data = [NSData dataWithContentsOfFile:filePath];
-            ALAssetsLibrary *library = [ALAssetsLibrary new];
-            [library writeImageDataToSavedPhotosAlbum:data metadata:nil completionBlock:^(NSURL *assetURL, NSError *error) {
-                if (error) {
-                    result(error.description);
-                } else {
-                    result(nil);
-                }
-            }];
+        switch ([type intValue]) {
+            case 0: {
+                NSData *data = [NSData dataWithContentsOfFile:filePath];
+                ALAssetsLibrary *library = [ALAssetsLibrary new];
+                [library writeImageDataToSavedPhotosAlbum:data metadata:nil completionBlock:^(NSURL *assetURL, NSError *error) {
+                    result(error ? error.description : nil);
+                }];
+                break;
+            }
+            case 1:
+            case 2: {
+                SEL selector = @selector(onCompleteCapture:didFinishSavingWithError:contextInfo:);
+                UISaveVideoAtPathToSavedPhotosAlbum(filePath, self, selector, NULL);
+                //  result in selector
+                break;
+            }
+            default:
+                result(nil);
+                break;
         }
     } else if ([@"saveImageByBytes" isEqualToString:call.method]) {
         FlutterStandardTypedData *imageBytes = call.arguments[@"imageBytes"];
@@ -52,3 +57,4 @@
     }
 }
 @end
+

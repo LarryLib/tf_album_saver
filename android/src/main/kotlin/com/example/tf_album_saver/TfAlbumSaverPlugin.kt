@@ -40,14 +40,16 @@ class TfAlbumSaverPlugin : MethodCallHandler {
                 var fileName = System.currentTimeMillis().toString() + separate1.last()
 
                 when (type) {
-                    0, 1, 2 -> {
-                        notiAlbum(file, fileName)
+                    0 -> {
+                        MediaStore.Images.Media.insertImage(tfRegistrar.context().getContentResolver(), file.getAbsolutePath(), fileName, null);
+                        notiAlbum(file)
                         result.success(null)
                     }
-                    3, 4 -> {
+                    1, 2 -> {
                         val newFile = getNewFileAndName(fileName)
                         copyFile(file.path, newFile.path)
-                        notiAlbum(newFile, fileName)
+                        val uri = Uri.fromFile(newFile)
+                        tfRegistrar.activeContext().sendBroadcast(Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, uri))
                         result.success(null)
                     }
                     else -> result.success(null)
@@ -75,7 +77,10 @@ class TfAlbumSaverPlugin : MethodCallHandler {
             fos.flush()
             fos.close()
 
-            notiAlbum(file, fileName)
+            //把文件插入到系统图库
+            MediaStore.Images.Media.insertImage(tfRegistrar.context().getContentResolver(), file.getAbsolutePath(), fileName, null);
+
+            notiAlbum(file)
         } catch (e: IOException) {
             e.printStackTrace()
         }
@@ -91,12 +96,9 @@ class TfAlbumSaverPlugin : MethodCallHandler {
         return file
     }
 
-    //保存file并发送广播通知更新数据库
-    fun notiAlbum(file: File, fileName: String) {
+    //  发送广播通知更新
+    fun notiAlbum(file: File) {
         try {
-            //把文件插入到系统图库
-            MediaStore.Images.Media.insertImage(tfRegistrar.context().getContentResolver(), file.getAbsolutePath(), fileName, null);
-
             val uri = Uri.fromFile(file)
             tfRegistrar.activeContext().sendBroadcast(Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, uri))
         } catch (e: IOException) {

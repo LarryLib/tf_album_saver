@@ -2,12 +2,10 @@ import 'dart:typed_data';
 import 'package:flutter/services.dart';
 
 enum FileType {
-  jpg,  //  0
-  jpeg, //  1
-  png,  //  2
-  gif,  //  3
-  video,//  4
-  pdf,  //  5
+  image,  //  0
+  gif,    //  1
+  video,  //  2
+  pdf,    //  3
 }
 
 class TfAlbumSaver {
