@@ -164,7 +164,7 @@ packages:
       name: tf_toast
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.3.0"
+    version: "0.4.0"
   typed_data:
     dependency: transitive
     description:

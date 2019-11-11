@@ -30,14 +30,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var type = FileType.jpg;
+  var type = FileType.image;
   var map = {
-    FileType.jpg: 'images/jpg.jpg',
-    FileType.jpeg: 'images/jpeg.jpeg',
-    FileType.png: 'images/png.png',
+    FileType.image: 'images/jpg.jpg', // 'images/jpeg.jpeg'、'images/png.png'
     FileType.gif: 'images/gif.gif',
-    FileType.pdf: 'images/pdf.pdf',
     FileType.video: 'images/video.MOV',
+    FileType.pdf: 'images/pdf.pdf',
   };
 
   //
@@ -72,6 +70,7 @@ class _HomePageState extends State<HomePage> {
                       child: Container(
                         alignment: Alignment.center,
                         width: width / map.keys.length * 0.8,
+                        height: 50,
                         color: type == t ? Colors.red : Colors.transparent,
                         child:
                             Text('${t.toString().replaceAll('FileType.', '')}'),

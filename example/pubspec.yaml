@@ -13,7 +13,7 @@ dependencies:
   path_provider: 1.2.0
   pdf_viewer_plugin: ^1.0.0+2
   video_player: ^0.10.2+5
-  tf_toast: ^0.3.0
+  tf_toast: ^0.4.0
   permission_handler:
     git: https://github.com/woodemi/flutter-permission-handler.git
     version: ^4.0.3
