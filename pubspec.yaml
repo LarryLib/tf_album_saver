@@ -1,6 +1,6 @@
 name: tf_album_saver
-description: A new Flutter project.
-version: 0.1.0
+description: A plugin that can save image/gif/video to an album.
+version: 0.2.0
 author: larry<lxd_super_main@126.com>
 homepage: https://github.com/lxd-Super-main/tf_album_saver.git
 
